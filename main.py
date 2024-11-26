@@ -15,7 +15,7 @@ import os
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
+app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
 
 load_dotenv(".env")
 EMAIL = os.getenv("EMAIL")
@@ -308,10 +308,10 @@ def contact():
         except Exception:
             flash(message=f"Failed to send message", category="error")
 
-        return redirect(url_for("contact"))
+        return redirect(url_for("get_all_posts"))
 
     return render_template(template_name_or_list="contact.html", current_user=current_user)
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
