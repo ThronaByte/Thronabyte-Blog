@@ -308,7 +308,7 @@ def contact():
 
         return render_template(template_name_or_list="contact.html", msg_sent=True)
 
-    return render_template(template_name_or_list="contact.html", current_user=current_user, msg_sent=False)
+    return render_template(template_name_or_list="contact.html", msg_sent=False)
 
 
 if __name__ == "__main__":
