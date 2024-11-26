@@ -308,7 +308,7 @@ def contact():
         except Exception:
             flash(message=f"Failed to send message", category="error")
 
-        return redirect(url_for("get_all_posts"))
+        return redirect(url_for("contact"))
 
     return render_template(template_name_or_list="contact.html", current_user=current_user)
 
