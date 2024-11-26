@@ -303,15 +303,13 @@ def contact():
 
         try:
             mail.send(msg)
-
-            flash(message="Message sent successfully!", category="success")
         except Exception:
-            flash(message=f"Failed to send message", category="error")
+            flash(message="Failed to send message", category="error")
 
-        return redirect(url_for("contact"))
+        return render_template(template_name_or_list="contact.html", msg_sent=True)
 
-    return render_template(template_name_or_list="contact.html", current_user=current_user)
+    return render_template(template_name_or_list="contact.html", current_user=current_user, msg_sent=False)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
